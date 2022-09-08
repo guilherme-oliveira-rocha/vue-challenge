@@ -75,6 +75,7 @@ export default {
       this.posts.filter((post)=>{
           return post.title.toLowerCase().includes(event.target.elements.search.value.toLowerCase())
         })
+        console.log(apiArtigos)
       this.page = apiArtigos.pages
     },
     async getOrderBy(event) {
@@ -83,8 +84,6 @@ export default {
       const apiArtigos = await api.json()
       this.posts = apiArtigos.data
       this.articleLength = apiArtigos.size
-      console.log(api)
-      console.log(apiArtigos)
     },
     async getPage(event) {
       const api = await fetch(`${wpApi}posts?search="${this.filterArticle}"&page=${event}`)

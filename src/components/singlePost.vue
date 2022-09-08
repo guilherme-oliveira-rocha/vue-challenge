@@ -96,25 +96,6 @@
 import {wpApi} from '../api/wpApi';
 
 export default {
-    head() {
-        return {
-            title: this.postSingle.title,
-            meta: [
-                {property: 'og:title', content: this.postSingle.metas["og:title"]},
-                {property: 'og:site_name', content: this.postSingle.metas["og:site_name"]},
-                {property: 'og:type', content: this.postSingle.metas["og:type"]},
-                // {property: 'og:url', content: 'https://www.my-site.com/my-special-page'},
-                {property: 'og:image', content: this.postSingle.metas["og:image"]},
-                {property: 'og:description', content: this.postSingle.metas["og:description"]},
-                {name: 'twitter:card', content: this.postSingle.metas["twitter:card"]},
-                {name: 'twitter:site', content: this.postSingle.metas["twitter:site"]},
-                {name: 'twitter:creator', content: this.postSingle.metas["twitter:creator"]},
-            ],
-            link: [
-                {rel: 'canonical', href: this.postSingle.metas.canonical}
-            ]
-        }
-    },
     data() {
         return {
             id: this.$route.params.id,
@@ -129,17 +110,13 @@ export default {
         this.postSingle = apiArtigos
         this.author = apiArtigos.author
         this.img = apiArtigos.featured_media
+        this.postSingle.published = new Date(this.postSingle.published).toDateString()
+        this.postSingle.modified = new Date(this.postSingle.modified).toDateString()
 
-        apiArtigos.modified = new Date()
-        var options = {year: 'numeric', month: 'long', day: 'numeric'};
-        this.postSingle.modified = apiArtigos.modified.toLocaleDateString("en-US", options)
-        
-        apiArtigos.published = new Date()
-        this.postSingle.published = apiArtigos.published.toLocaleDateString("en-US", options)
     },
     }
 </script>
-
+D
 <style lang="css">
     .img figure img{
         width: 100%;
