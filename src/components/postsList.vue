@@ -75,7 +75,7 @@ export default {
       this.posts.filter((post)=>{
           return post.title.toLowerCase().includes(event.target.elements.search.value.toLowerCase())
         })
-        console.log(apiArtigos)
+        // console.log(apiArtigos)
       this.page = apiArtigos.pages
     },
     async getOrderBy(event) {

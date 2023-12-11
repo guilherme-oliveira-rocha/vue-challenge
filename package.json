@@ -5,11 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve --port 9045",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node src/api/wpApi.js",
+    "test:dev": "npx mocha -w src/*.test.js*",
+    "test": "npx mocha src/*.test.js*",
+    "test:cov": "npx nyc npx mocha src/*.test.js*"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "mocha": "^10.2.0",
+    "node": "^21.1.0",
     "nuxt": "^2.15.8",
+    "supertest": "^6.3.3",
     "vue": "^3.2.13",
     "vue-router": "^4.1.5",
     "vuejs-paginate-next": "^1.0.2"
