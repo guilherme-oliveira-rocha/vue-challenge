@@ -2,10 +2,15 @@ import { createRouter, createWebHistory } from 'vue-router'
 import singlePosts from './components/singlePost.vue'
 import postsList from './components/postsList.vue';
 
+// const extrairParametroId = route => ({
+//     id: +route.params.id
+// })
+
 const routes = [
     {path: '/:id', 
         component:  singlePosts,
         name: 'single',
+        // props: extrairParametroId
     },
     {path: '/', component: postsList, name: 'postsList'},
 ];
