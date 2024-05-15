@@ -4,9 +4,7 @@
             <h5 class="card-title">{{post.title}}</h5>
             <p class="card-text">{{post.excerpt}}</p>
             <router-link class="btn btn-primary ms-3" 
-            :to="{ path: `${post.permalink}`}">Saiba Mais</router-link>
-            
-            <!-- <a :href="post.permalink" class="btn btn-primary">Saiba Mais</a> -->       
+            :to="{ path: `${post.id}`}">Saiba Mais</router-link>               
         </div>
     </div>
 </template>

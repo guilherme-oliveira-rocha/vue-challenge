@@ -95,7 +95,6 @@ export default {
     const api = await fetch(`${wpApi}posts`)
     const apiArtigos = await api.json()
     this.posts = apiArtigos.data
-    console.log(apiArtigos)
   },
 }
 </script>
